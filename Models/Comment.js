@@ -15,7 +15,13 @@ Comment.init(
             allowNull: false,
             defaultValue: DataTypes.NOW
         },
-        // another section for the comment content itself
+        content: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [100]
+            }     
+        },
     },
     {
         sequelize,
