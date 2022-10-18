@@ -1,4 +1,4 @@
-const databaseConnection = require('../Config/Connection');
+
 const { User, Blog, Comment } = require('../Models')
 
 const users = [
@@ -58,4 +58,13 @@ const comment = [
         user_id: 2,
     },
 ]
+
+
+const seedUsers = () => User.bulkCreate(userData, {
+    individualHooks: true
+});
+const seedBlogs = () => Blog.bulkCreate(blogPosts);
+const seedComments = () => Comments.bulkCreate(commentPosts);
+
+console.log('working');
 
