@@ -60,11 +60,11 @@ const comment = [
 ]
 
 
-const seedUsers = () => User.bulkCreate(userData, {
+const seedUsers = () => User.bulkCreate(users, {
     individualHooks: true
 });
-const seedBlogs = () => Blog.bulkCreate(blogPosts);
-const seedComments = () => Comments.bulkCreate(commentPosts);
+const seedBlogs = () => Blog.bulkCreate(blog);
+const seedComments = () => Comments.bulkCreate(comment);
 
 console.log('working');
 
