@@ -36,4 +36,4 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-module.exports = ReadableStreamDefaultController;
+module.exports = router;
