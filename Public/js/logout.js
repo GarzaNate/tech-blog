@@ -1,5 +1,3 @@
-const e = require("express");
-
 const logout = async () => {
     const response = await fetch('api/users/logout', {
         method: 'POST',
