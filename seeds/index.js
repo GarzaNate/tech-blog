@@ -4,40 +4,43 @@ const { User, Blog, Comment } = require('../Models')
 const users = [
     {
         username: 'Martin',
+        email: 'test@test.com',
         password: 'doesntmatter'
     },
 
     {
         username: 'Tom',
+        email: 'bob@test.com',
         password: 'lovetocode'
     },
 
     {
         username: 'Jordan',
+        email: 'pop@test.com',
         password: 'cookies4life'
     },
 ]
 
 const blog = [
     {
-        title: 'Basketball is the best sport',
         author: 'Martin',
+        title: 'Basketball is the best sport',
         date_posted: '01/15/22',
         content: 'I think basketball is the greatest sport',
         user_id: 2,
     },
 
     {
-        title: 'Love the rain',
         author: 'Tom',
+        title: 'Love the rain',
         date_posted: '12/23/22',
         content: 'I love when it rains',
         user_id: 1,
     },
 
     {
-        title: 'Coding is fun',
         author: 'Jordan',
+        title: 'Coding is fun',
         date_posted: '05/11/22',
         content: 'Coding is one of my favorite things to do',
         user_id: 3,
@@ -70,9 +73,9 @@ const seedComments = () => Comment.bulkCreate(comment);
 let test = async ()=> {
 
     await sequelize.sync({ force: true }).then(async () => {
-        // seedUsers()
+      await seedUsers()
       await  seedBlogs()
-        // seedComments()
+      await seedComments()
       });
 }
  test()

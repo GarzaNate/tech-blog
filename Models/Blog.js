@@ -11,7 +11,7 @@ Blog.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        blogTitle: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -36,7 +36,7 @@ Blog.init(
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        tableName: "blog",
+        // tableName: "blog",
         underscored: true,
         modelName: 'blog',
     }
