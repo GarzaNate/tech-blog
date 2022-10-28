@@ -12,6 +12,7 @@ router.get('/', async (req, res) => {
             },
         ],
     }).catch((err) => {
+      console.log(err);
         res.json(err);
     });
     const blogs = blogPosts.map((blog) => blog.get({ plain: true }));

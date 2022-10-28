@@ -1,6 +1,6 @@
 
+const sequelize = require('../Config/Connection');
 const { User, Blog, Comment } = require('../Models')
-
 const users = [
     {
         username: 'Martin',
@@ -63,8 +63,18 @@ const comment = [
 const seedUsers = () => User.bulkCreate(users, {
     individualHooks: true
 });
-const seedBlogs = () => Blog.bulkCreate(blog);
-const seedComments = () => Comments.bulkCreate(comment);
+const seedBlogs = async () => await Blog.bulkCreate(blog);
+const seedComments = () => Comment.bulkCreate(comment);
 
+
+let test = async ()=> {
+
+    await sequelize.sync({ force: true }).then(async () => {
+        // seedUsers()
+      await  seedBlogs()
+        // seedComments()
+      });
+}
+ test()
 console.log('working');
 
