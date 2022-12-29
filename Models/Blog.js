@@ -15,28 +15,22 @@ Blog.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        author: {
+        blog_content: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
-        date_posted: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW,
-        },
-        content: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [200]
-            }     
-        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        // tableName: "blog",
         underscored: true,
         modelName: 'blog',
     }

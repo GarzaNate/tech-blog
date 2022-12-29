@@ -12,23 +12,25 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        author: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        date_posted: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW
-        },
         content: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [100]
-            }     
         },
-    },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
+        blog_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'blog',
+                key: 'id'
+            }
+        }
+    },    
     {
         sequelize,
         timestamps: false,

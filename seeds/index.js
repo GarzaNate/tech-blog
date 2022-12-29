@@ -1,4 +1,3 @@
-
 const sequelize = require('../Config/Connection');
 const { User, Blog, Comment } = require('../Models')
 const users = [
@@ -23,25 +22,19 @@ const users = [
 
 const blog = [
     {
-        author: 'Martin',
         title: 'Basketball is the best sport',
-        date_posted: '01/15/22',
         content: 'I think basketball is the greatest sport',
-        user_id: 2,
-    },
-
-    {
-        author: 'Tom',
-        title: 'Love the rain',
-        date_posted: '12/23/22',
-        content: 'I love when it rains',
         user_id: 1,
     },
 
     {
-        author: 'Jordan',
+        title: 'Love the rain',
+        content: 'I love when it rains',
+        user_id: 2,
+    },
+
+    {
         title: 'Coding is fun',
-        date_posted: '05/11/22',
         content: 'Coding is one of my favorite things to do',
         user_id: 3,
     },
@@ -49,16 +42,19 @@ const blog = [
 
 const comment = [
     {
-        author: 'Martin',
-        date_posted: '08/24/22',
-        content: 'This was a great post',
-        user_id: 2,
+        content: 'dummy0',
+        user_id: 1,
+        post_id: 1
     },
     {
-        author: 'Jordan',
-        date_posted: '04/30/22',
-        content: 'Love this, wanna hear more',
+        content: 'dummy1',
         user_id: 2,
+        post_id: 2
+    },
+    {
+        content: 'dummy2',
+        user_id: 3,
+        post_id: 3
     },
 ]
 
