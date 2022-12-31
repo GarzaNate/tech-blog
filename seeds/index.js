@@ -23,19 +23,19 @@ const users = [
 const blog = [
     {
         title: 'Basketball is the best sport',
-        content: 'I think basketball is the greatest sport',
+        blog_content: 'I think basketball is the greatest sport',
         user_id: 1,
     },
 
     {
         title: 'Love the rain',
-        content: 'I love when it rains',
+        blog_content: 'I love when it rains',
         user_id: 2,
     },
 
     {
         title: 'Coding is fun',
-        content: 'Coding is one of my favorite things to do',
+        blog_content: 'Coding is one of my favorite things to do',
         user_id: 3,
     },
 ]

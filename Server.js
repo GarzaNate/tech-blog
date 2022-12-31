@@ -20,15 +20,15 @@ const hbs = exphbs.create({});
 
 // session cookies
 const sess = {
-    secret: 'Super secret secret',
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-      db: sequelize
-    })
-  };
-  console.log(1)
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+console.log(1)
 
 app.use(session(sess));
 console.log(2)
