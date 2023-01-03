@@ -10,7 +10,6 @@ const sequelize = require('./Config/Connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 require('dotenv').config();
-console.log(0)
 // express app
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -28,19 +27,14 @@ const sess = {
     db: sequelize
   })
 };
-console.log(1)
 
 app.use(session(sess));
-console.log(2)
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-console.log(3)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-console.log(4)
+app.use(express.static(path.join(__dirname, 'Public')));
 app.use(routes);
-console.log(5)
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening, running on port ${PORT}`));
 }).catch(err => {
