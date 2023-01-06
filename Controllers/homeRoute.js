@@ -1,5 +1,5 @@
 const sequelize = require('../Config/Connection')
-const { Blog, User, Comment } = require('../Models');
+const { Blog, User } = require('../Models');
 const router = require('express').Router();
 
 // route to get all blog posts
@@ -9,13 +9,13 @@ router.get('/', (req, res) => {
       include: [{
         model: User,
         order: [['created_at', 'DESC']],
-        attributes: ['username']
+        attributes: ['id']
       }]
     },
   ).then(blogData => {
     const blogs = blogData.map(blog => blog.get({ plain: true }));
     console.log(blogs);
-    res.render('homepage', { blogs, loggedIn: req.session.loggedIn });
+    res.render('homepage', { blogs });
   }).catch(err => {
     console.log(err);
     res.status(501).json(err);
